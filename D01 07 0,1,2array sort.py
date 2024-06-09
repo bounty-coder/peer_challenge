@@ -2,6 +2,32 @@
 #  sort the array in ascending order.
 
 class Solution:
+        # Count the number of zero,one,two and make arr
+        # TC- O(2n), SC-O(1)
+        def sort012(self,arr,n):
+        zero,one,two=0,0,0
+        for i in arr:
+            if i==0:
+                zero+=1
+            elif i==1:
+                one+=1
+            elif i==2:
+                two+=1
+        arr.clear()
+        while zero or one or two:
+            if zero>0:
+                arr.append(0)
+                zero-=1
+            elif one>0:
+                arr.append(1)
+                one-=1
+            elif two>0:
+                arr.append(2)
+                two-=1
+        return arr
+
+    #National Dutch FLag
+    #TC - O(n) ,SC-O(1)
     def sort012(self,arr,n):
         # code here
         l,m=0,0
